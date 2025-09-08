@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xs="http://www.w3.org/2001/XMLSchema"
+               xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+               xsi:schemaLocation="http://java.sun.com/xml/ns/jaxb http://java.sun.com/xml/ns/jaxb/bindingschema_2_0.xsd"
+               jaxb:extensionBindingPrefixes="xjc"
+               version="2.1">
+
+    <!-- Bindings for IATA_PaymentClearanceCommonTypes.xsd -->
+    <jaxb:bindings schemaLocation="xsd/IATA_PaymentClearanceCommonTypes.xsd" node="/xs:schema">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.ia.iata.payment.clearance"/>
+        </jaxb:schemaBindings>
+        
+        <!-- Rename DigitalSignatureType to avoid collision -->
+        <jaxb:bindings node="//xs:complexType[@name='DigitalSignatureType']">
+            <jaxb:class name="PaymentDigitalSignatureType"/>
+        </jaxb:bindings>
+        
+        <!-- Rename ErrorType to avoid collision -->
+        <jaxb:bindings node="//xs:complexType[@name='ErrorType']">
+            <jaxb:class name="PaymentErrorType"/>
+        </jaxb:bindings>
+    </jaxb:bindings>
+    
+    <!-- Bindings for IATA_OffersAndOrdersCommonTypesFullyOptional.xsd -->
+    <jaxb:bindings schemaLocation="xsd/IATA_OffersAndOrdersCommonTypesFullyOptional.xsd" node="/xs:schema">
+        <jaxb:schemaBindings>
+            <jaxb:package name="com.ia.iata.offers.orders"/>
+        </jaxb:schemaBindings>
+        
+        <!-- Rename DigitalSignatureType to avoid collision -->
+        <jaxb:bindings node="//xs:complexType[@name='DigitalSignatureType']">
+            <jaxb:class name="OrdersDigitalSignatureType"/>
+        </jaxb:bindings>
+        
+        <!-- Rename ErrorType to avoid collision -->
+        <jaxb:bindings node="//xs:complexType[@name='ErrorType']">
+            <jaxb:class name="OrdersErrorType"/>
+        </jaxb:bindings>
+        
+        <!-- Rename IATA_EasyPayType to avoid collision -->
+        <jaxb:bindings node="//xs:complexType[@name='IATA_EasyPayType']">
+            <jaxb:class name="OrdersIATA_EasyPayType"/>
+        </jaxb:bindings>
+    </jaxb:bindings>
+</jaxb:bindings>
