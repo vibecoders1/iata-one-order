@@ -113,8 +113,8 @@
                     <bindingIncludes>
                         <include>bindings.xml</include>
                     </bindingIncludes>
-                    <generateDirectory>${project.build.directory}/generated-sources/jaxb</generateDirectory>
-                    <generatePackage>com.ia.iata</generatePackage>
+                    <generateDirectory>src/main/java</generateDirectory>
+                    <generatePackage>com.ia.iata.oneorder</generatePackage>
                     <extension>true</extension>
                     <verbose>true</verbose>
                     <args>
